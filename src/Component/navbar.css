@@ -1,6 +1,6 @@
 .navbar {
-  position: sticky; /* ⬅️ sticky instead of fixed */
-  top: 0;           /* sticks to top when scrolled */
+  position: sticky;
+  top: 0;
   width: 100%;
   z-index: 999;
   display: flex;
@@ -12,19 +12,17 @@
   box-sizing: border-box;
 }
 
-/* Navbar hover effect */
 .navbar:hover {
   background-color: #222;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
-/* Logo with optional icon */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 8px; /* space between icon and text */
+  gap: 8px; 
   background: linear-gradient(90deg, #ff4b5c, #1e90ff, #00c9a7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,20 +43,20 @@
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.8rem; /* smaller gap to prevent overflow */
-  flex-wrap: wrap; /* allows links to wrap on small screens */
-  justify-content: flex-end; /* push to right */
-  margin: 0; /* remove left margin */
-  padding: 0; /* remove default padding */
+  gap: 1.8rem; 
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 500;
   animation: colorChange 5s infinite alternate;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
-  white-space: nowrap; /* prevents line breaks */
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -66,7 +64,6 @@
   text-shadow: 0 0 10px currentColor;
 }
 
-/* Animated color-changing text */
 @keyframes colorChange {
   0% { color: #ff4b5c; }
   25% { color: #ffb400; }
@@ -75,16 +72,26 @@
   100% { color: #c77dff; }
 }
 
-/* 🔹 Add top padding to content sections to avoid overlap with sticky navbar */
 .home,
 .about,
 .education-content,
 .projects-content,
 .contact {
-  padding-top: 90px; /* Adjust based on navbar height */
+  padding-top: 90px; 
 }
 
-/* Optional: prevent horizontal overflow */
 body {
   overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links a {
+    font-size: 1.2rem;
+  }
 }

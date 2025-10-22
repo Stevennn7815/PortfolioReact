@@ -6,6 +6,8 @@
   padding: 60px 80px;
   background: rgb(44, 44, 44);
   min-height: 80vh;
+  flex-wrap: wrap; 
+  box-sizing: border-box;
 }
 
 .intro {
@@ -34,14 +36,13 @@
   height: 350px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #fff; 
+  border: 4px solid #fff;
   box-shadow: 
-    0 0 25px rgba(255, 255, 255, 0.8), 
+    0 0 25px rgba(255, 255, 255, 0.8),
     0 0 50px rgba(255, 255, 255, 0.4);
   transform: translateX(110px);
   transition: box-shadow 0.4s ease;
 }
-
 
 .profile-pic img:hover {
   box-shadow: 
@@ -57,12 +58,77 @@
 }
 
 .social-links a {
-  color: #d4e8ed;        
-  font-size: 30px;       
+  color: #d4e8ed;
+  font-size: 30px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #00c9a7;          
-  transform: scale(1.2);  
+  color: #00c9a7;
+  transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+  .intro {
+    max-width: 60%;
+    transform: translate(30px, -30px);
+  }
+
+  .profile-pic img {
+    width: 300px;
+    height: 300px;
+    transform: translateX(50px);
+  }
+
+  .social-links {
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .intro {
+    max-width: 100%;
+    transform: translate(0, 0);
+    text-align: center;
+  }
+
+  .intro h2 {
+    font-size: 45px;
+  }
+
+  .profile-pic img {
+    width: 250px;
+    height: 250px;
+    transform: translateX(0);
+  }
+
+  .social-links {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h2 {
+    font-size: 35px;
+  }
+
+  .intro p {
+    font-size: 16px;
+  }
+
+  .profile-pic img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .social-links a {
+    font-size: 24px;
+  }
 }

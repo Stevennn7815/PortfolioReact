@@ -1,22 +1,19 @@
-body, html, #root {
+html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-
-.App {
-  text-align: center;
+  background-color: #111; 
 }
 
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* full height */
+  min-height: 100vh;
+  background-color: #535252a6;
 }
 
 .main-content {
   flex: 1;
-
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -46,5 +43,45 @@ body, html, #root {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.home,
+.about,
+.education-content,
+.projects-content,
+.contact {
+  padding-top: 90px; 
+}
+
+
+@media (max-width: 1024px) {
+  .App-header {
+    font-size: calc(10px + 1.8vmin);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 15px;
+  }
+
+  .App-header {
+    font-size: calc(10px + 1.5vmin);
+  }
+}
+
+
+@media (max-width: 480px) {
+  .App-header {
+    font-size: calc(10px + 1.2vmin);
+  }
+
+  .home,
+  .about,
+  .education-content,
+  .projects-content,
+  .contact {
+    padding-top: 70px; 
   }
 }
