@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Component/Navbar';
+import Footer from './Component/Footer';
+import Profile from './Pages/Profile';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { getFaviconSvg } from './FaviconIcon'; // make sure you have this file
 
 function App() {
+  useEffect(() => {
+    const favicon = document.getElementById('favicon');
+    if (favicon) {
+      favicon.href = getFaviconSvg(); // dynamically set the favicon
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Profile />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

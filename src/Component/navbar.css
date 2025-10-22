@@ -1,0 +1,90 @@
+.navbar {
+  position: sticky; /* ⬅️ sticky instead of fixed */
+  top: 0;           /* sticks to top when scrolled */
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 2rem;
+  background-color: #111;
+  transition: background-color 0.5s ease;
+  box-sizing: border-box;
+}
+
+/* Navbar hover effect */
+.navbar:hover {
+  background-color: #222;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Logo with optional icon */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  background: linear-gradient(90deg, #ff4b5c, #1e90ff, #00c9a7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorChange 5s infinite alternate;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: #00c9a7;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem; /* smaller gap to prevent overflow */
+  flex-wrap: wrap; /* allows links to wrap on small screens */
+  justify-content: flex-end; /* push to right */
+  margin: 0; /* remove left margin */
+  padding: 0; /* remove default padding */
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  animation: colorChange 5s infinite alternate;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  white-space: nowrap; /* prevents line breaks */
+}
+
+.nav-links a:hover {
+  transform: scale(1.15);
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Animated color-changing text */
+@keyframes colorChange {
+  0% { color: #ff4b5c; }
+  25% { color: #ffb400; }
+  50% { color: #00c9a7; }
+  75% { color: #1e90ff; }
+  100% { color: #c77dff; }
+}
+
+/* 🔹 Add top padding to content sections to avoid overlap with sticky navbar */
+.home,
+.about,
+.education-content,
+.projects-content,
+.contact {
+  padding-top: 90px; /* Adjust based on navbar height */
+}
+
+/* Optional: prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+}
