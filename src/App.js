@@ -6,13 +6,13 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
-import { getFaviconSvg } from './FaviconIcon'; // make sure you have this file
+import { getFaviconSvg } from './FaviconIcon';
 
 function App() {
   useEffect(() => {
     const favicon = document.getElementById('favicon');
     if (favicon) {
-      favicon.href = getFaviconSvg(); // dynamically set the favicon
+      favicon.href = getFaviconSvg();
     }
   }, []);
 
